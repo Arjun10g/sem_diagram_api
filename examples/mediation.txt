@@ -1,0 +1,16 @@
+# Mediation Model
+# Classic Baron & Kenny / Hayes-style mediation
+#
+#   x  →  m  →  y     (indirect path: a * b)
+#   x  →  y           (direct path:   c)
+#
+# Parameter labels allow computation of indirect and total effects
+# as defined parameters using the := operator.
+
+# Paths (labeled for effect decomposition)
+m ~ a*x
+y ~ b*m + c*x
+
+# Defined (derived) parameters
+indirect := a * b
+total    := c + a * b

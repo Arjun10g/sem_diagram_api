@@ -1,0 +1,10 @@
+  # General factor
+  General =~ x1 + x2 + x3 + x4 + x5 + x6
+  # Specific factors
+  Specific1 =~ x1 + x2 + x3
+  Specific2 =~ x4 + x5 + x6
+
+  # Orthogonalize: Specify specific factors are not correlated with general
+  General ~~ 0*Specific1
+  General ~~ 0*Specific2
+  Specific1 ~~ 0*Specific2

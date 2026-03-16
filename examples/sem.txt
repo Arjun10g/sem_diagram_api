@@ -1,0 +1,30 @@
+# Full Structural Equation Model
+# Bollen (1989) — Political Democracy
+#
+# Measurement model:
+#   ind60  — industrialisation in 1960 (latent)
+#   dem60  — political democracy in 1960 (latent)
+#   dem65  — political democracy in 1965 (latent)
+#
+# Structural model:
+#   dem60 predicted by ind60
+#   dem65 predicted by both ind60 and dem60
+#
+# Correlated residuals across the two democracy waves (y1/y5, y2/y4, etc.)
+# reflect the same items measured at different time points.
+
+# Measurement model
+ind60 =~ x1 + x2 + x3
+dem60 =~ y1 + y2 + y3 + y4
+dem65 =~ y5 + y6 + y7 + y8
+
+# Structural paths
+dem60 ~ ind60
+dem65 ~ ind60 + dem60
+
+# Correlated residuals (cross-wave, same indicator)
+y1 ~~ y5
+y2 ~~ y4 + y6
+y3 ~~ y7
+y4 ~~ y8
+y6 ~~ y8

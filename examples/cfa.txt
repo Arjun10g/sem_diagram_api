@@ -1,0 +1,13 @@
+# Confirmatory Factor Analysis
+# Holzinger & Swineford (1939) — three correlated factors
+#
+# Factors:
+#   visual  — visual-spatial ability
+#   textual — verbal/reading ability
+#   speed   — processing speed
+#
+# All factor variances and covariances are freely estimated by default.
+
+visual =~ x1 + x2 + x3
+textual =~ x4 + x5 + x6
+speed =~ x7 + x8 + x9
